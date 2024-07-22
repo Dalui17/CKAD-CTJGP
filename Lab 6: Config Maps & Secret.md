@@ -154,7 +154,6 @@ env | grep db_
 ```
 
 ### Task 4 : Injecting ConfigMap as volume mount from file
-If already created `file-cm` configmap  then ignore the below step
 
 Create a file
 ```
@@ -200,7 +199,7 @@ spec:
 
 ```
 ```
-kubectl replace -f volume-env.yaml --force
+kubectl apply -f volume-env.yaml 
 ```
 ```
 kubectl describe pod web-pod-4
@@ -215,9 +214,12 @@ cd /app
 ```
 cat token
 ```
+```
+exit
+```
 
 ### Task 6 : Secret
-Imperative
+### Task 1:Imperative
 ```
 kubectl create secret generic secret-1 --from-literal=db_user=admin --from-literal=db_pwd=123
 ```
@@ -231,7 +233,7 @@ Declrative
 ```
 vi secret.yaml
 ```
-```yaml
+```
 apiVersion: v1
 kind: Secret
 metadata:
@@ -266,7 +268,7 @@ kubectl describe secrets mysql-credentials
 ```
 You can inject the secret in all the three ways as above.
 
-Injecting all values
+### Task 2: Injecting all values
 ```
 vi sc-pod.yaml
 ```
@@ -324,13 +326,13 @@ kubectl get secret
 ```
 kubectl describe secret secret-1
 ```
-### Inject PARTICULAR variables from Secret(FromLiteral) into POD
+### Task 3: Inject PARTICULAR variables from Secret(FromLiteral) into POD
 Create secret as shown below
 ```
 vi sc-pod-2.yaml
 ```
 
-```yaml
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -361,7 +363,7 @@ kubectl get pod
 ```
 Enter into the pod and check if the variable has been passed correctly or not
 ```
-kubectl exec -it env-pod -- bash
+kubectl exec -it sc-pod-2 -- bash
 ```
 ```
 env | grep db_
@@ -369,7 +371,7 @@ env | grep db_
 ```
 exit
 ```
-### Injecting ConfigMap as volume mount
+### Task 4: Injecting ConfigMap as volume mount
 Create a file
 ```
 vi token
