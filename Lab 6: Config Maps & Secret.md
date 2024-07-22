@@ -131,10 +131,10 @@ spec:
           key: db_pwd
 ```
 ```
-kubectl replace -f cm2-env.yaml --force
+kubectl apply -f cm2-env.yaml 
 ```
 ```
-kubectl describe pod web-pod
+kubectl describe pod web-pod-2
 ```
 Enter the pod and check if the variable has been passed correctly or not
 ```
