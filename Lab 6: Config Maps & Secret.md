@@ -218,7 +218,7 @@ cat token
 exit
 ```
 
-### Task 6 : Secret
+###  Secret
 ### Task 1:Imperative
 ```
 kubectl create secret generic secret-1 --from-literal=db_user=admin --from-literal=db_pwd=123
