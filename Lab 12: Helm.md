@@ -55,7 +55,7 @@ helm repo update
 
 To install the WordPress application using the Helm chart with the release name `my-wordpress`
 ```
-helm install my-wordpress my-repo/wordpress
+helm install my-wordpress my-bitnami-repo/wordpress
 ```
 To list all the releases currently installed on your Kubernetes cluster
 ```
