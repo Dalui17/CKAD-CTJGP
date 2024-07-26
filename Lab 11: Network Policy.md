@@ -181,6 +181,9 @@ spec:
   - to:
     - ipBlock:
         cidr: 8.8.8.8/32  # Example IP address
+    ports:
+    - protocol: TCP
+      port: 443
 ```
 Apply the network policy 
 ```
@@ -199,6 +202,9 @@ kubectl exec -it pod1 -- bash
 ```
 ```
 curl https://8.8.8.8
+```
+```
+curl http://8.8.8.8
 ```
 It can access the IP as it is enabled by the Egress Policy
 ```
