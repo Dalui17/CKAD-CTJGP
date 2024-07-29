@@ -305,7 +305,7 @@ curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Author
 exit
 ```
 
-## Task 3: Launching the Kubernetes Dashboard using Cluster Role Binding
+## Task 3: Launching the Kubernetes Dashboard using Cluster Role Binding [SELF EXERCISE]
 
 The Kubernetes Dashboard is a web-based user interface for Kubernetes clusters. It provides a graphical interface for users to manage and monitor their Kubernetes clusters and applications running within them.
 
